@@ -1,0 +1,9 @@
+{
+    "domain": "youtube_latest_videos",
+    "name": "YouTube Latest Videos",
+    "version": "1.0.0",
+    "documentation": "https://example.com",
+    "requirements": [],
+    "codeowners": [],
+    "config_flow": true
+}
