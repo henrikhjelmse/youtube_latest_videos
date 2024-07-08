@@ -1,5 +1,5 @@
 {
-    "name": "svyoutube",
+    "name": "youtube_latest_videos",
     "country": "SE",
     "homeassistant": "2024.1.0",
     "render_readme": true
