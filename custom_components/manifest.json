@@ -2,7 +2,7 @@
     "domain": "youtube_latest_videos",
     "name": "YouTube Latest Videos",
     "version": "1.0.0",
-    "documentation": "https://example.com",
+    "documentation": "https://github.com/henrikhjelmse/youtube-ha",
     "requirements": [],
     "codeowners": [],
     "config_flow": true
