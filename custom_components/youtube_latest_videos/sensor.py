@@ -47,18 +47,20 @@ class YouTubeLatestVideosSensor(SensorEntity):
     @property
     def state(self):
         if self.coordinator.data and "videos" in self.coordinator.data:
-            self._state = len(self.coordinator.data["videos"])
+            latest_video = self.coordinator.data["videos"][0] if self.coordinator.data["videos"] else None
+            if latest_video:
+                self._state = latest_video["video"]
         return self._state
 
     @property
     def extra_state_attributes(self):
         if self.coordinator.data and "videos" in self.coordinator.data:
-            first_video = self.coordinator.data["videos"][0] if self.coordinator.data["videos"] else None
-            if first_video:
+            latest_video = self.coordinator.data["videos"][0] if self.coordinator.data["videos"] else None
+            if latest_video:
                 return {
-                    "img": first_video["img"],
-                    "video": first_video["video"],
-                    "url": f"https://www.youtube.com/watch?v={first_video['video']}",
+                    "img": latest_video["img"],
+                    "video": latest_video["video"],
+                    "url": f"https://www.youtube.com/watch?v={latest_video['video']}",
                     "username": self.coordinator.data.get("username"),
                 }
         return {}
