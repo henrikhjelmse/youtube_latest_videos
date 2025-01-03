@@ -13,7 +13,9 @@ LOGGER = logging.getLogger(__name__)
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry, async_add_entities):
     username = entry.data["username"]
     coordinator = YouTubeDataUpdateCoordinator(hass, username)
-    await coordinator.async_config_entry_first_refresh()
+    
+    # Initial data fetch
+    await coordinator.async_refresh()
 
     async_add_entities([YouTubeLatestVideosSensor(coordinator)], True)
 

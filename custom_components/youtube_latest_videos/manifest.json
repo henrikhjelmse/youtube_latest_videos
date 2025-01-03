@@ -1,7 +1,7 @@
 {
     "domain": "youtube_latest_videos",
     "name": "YouTube Latest Videos",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "documentation": "https://github.com/henrikhjelmse/youtube-ha",
     "requirements": [],
     "codeowners": [],
